@@ -211,7 +211,11 @@
         // Create legend
         const legendEl = document.getElementById('mapLegend');
 
+        // Categories to exclude from combined map (agencies)
+        const excludeFromCombined = ['realestate.html', 'babysitter.html', 'maid.html'];
+
         Object.keys(categories).forEach(catKey => {
+            if (excludeFromCombined.includes(catKey)) return;
             const cat = categories[catKey];
             const locs = locations[catKey];
             if (!locs) return;
