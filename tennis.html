@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테니스장 - Abu Dhabi Onboarding Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400;500;600;700&family=Noto+Serif+SC:wght@200;300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <div class="hero" style="min-height:320px; padding:80px 40px 60px;">
+        <div class="hero-particles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLang('ko')">KO</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('zh')">CN</button>
+        </div>
+        <p class="hero-eyebrow" data-ko="아부다비 온보딩 가이드" data-en="Abu Dhabi Onboarding Guide" data-zh="阿布扎比安居指南"></p>
+        <h1 style="font-size:3rem;" data-ko="테니스장" data-en="Tennis Courts" data-zh="网球场"></h1>
+        <p class="hero-subtitle" data-ko="아부다비에서 테니스를 즐길 수 있는 코트 &amp; 아카데미" data-en="Tennis courts &amp; academies across Abu Dhabi" data-zh="阿布扎比的网球场和网球学院"></p>
+        <div class="hero-divider"></div>
+    </div>
+
+    <div class="back-bar">
+        <a href="index.html" class="back-btn" data-ko="메인으로" data-en="Back to Main" data-zh="返回主页"></a>
+    </div>
+
+    <div class="view-tabs">
+        <button class="view-tab active" data-view="list">
+            <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+            <span data-ko="목록" data-en="List" data-zh="列表"></span>
+        </button>
+        <button class="view-tab" data-view="map">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span data-ko="지도" data-en="Map" data-zh="地图"></span>
+        </button>
+    </div>
+
+    <div class="map-view">
+        <div id="mapContainer" class="map-container"></div>
+    </div>
+
+    <div class="section">
+        <div class="cards-grid">
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">01</span>
+                    <span class="tag" data-ko="프리미엄" data-en="Premium" data-zh="高端"></span>
+                </div>
+                <h3>Zayed Sports City Tennis Courts</h3>
+                <p class="description" data-ko="아부다비 최대 스포츠 복합시설 내 테니스 센터. 실외 하드코트 8면 보유. International Tennis Centre로 ATP/WTA 대회가 열리기도 합니다. 야간 조명 완비로 저녁에도 이용 가능." data-en="Tennis center within Abu Dhabi's largest sports complex. Features 8 outdoor hard courts. The International Tennis Centre hosts ATP/WTA events. Fully lit for evening play." data-zh="位于阿布扎比最大体育综合设施内的网球中心。拥有8个室外硬地球场。国际网球中心曾举办ATP/WTA赛事。配备夜间照明。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Zayed Sports City, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 403 4200
+                    </div>
+                </div>
+                <a href="https://www.zsc.ae/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">02</span>
+                    <span class="tag" data-ko="아카데미" data-en="Academy" data-zh="学院"></span>
+                </div>
+                <h3>Abu Dhabi Country Club Tennis</h3>
+                <p class="description" data-ko="알 무쉬리프 지역의 클래식 컨트리클럽. 플러드라이트 하드코트 4면 보유. 주니어 및 성인 그룹 레슨, 개인 레슨 프로그램 운영. 수영장, 짐 등 부대시설도 이용 가능합니다." data-en="Classic country club in Al Mushrif area. 4 floodlit hard courts. Offers junior and adult group lessons and private coaching. Pool, gym, and other amenities available." data-zh="位于Al Mushrif地区的经典乡村俱乐部。4个泛光灯硬地球场。提供青少年和成人团体课程及私教。游泳池、健身房等设施齐全。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Al Mushrif, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 657 7600
+                    </div>
+                </div>
+                <a href="https://www.adcountryclub.com/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">03</span>
+                    <span class="tag" data-ko="야스 아일랜드" data-en="Yas Island" data-zh="亚斯岛"></span>
+                </div>
+                <h3>W Abu Dhabi Tennis Academy (Yas Island)</h3>
+                <p class="description" data-ko="야스 아일랜드 W호텔 인근의 테니스 아카데미. 실외 하드코트 보유. ITF 인증 코치진의 성인/주니어 프로그램. 리조트 숙박객 및 외부인 모두 이용 가능합니다." data-en="Tennis academy near W Hotel on Yas Island. Outdoor hard courts with ITF-certified coaches for adults and juniors. Open to both hotel guests and external members." data-zh="位于亚斯岛W酒店附近的网球学院。室外硬地球场，ITF认证教练提供成人/青少年课程。酒店住客和外部会员均可使用。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Yas Island, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 656 0000
+                    </div>
+                </div>
+                <a href="https://www.marriott.com/en-us/hotels/auhrw-w-abu-dhabi-yas-island/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">04</span>
+                    <span class="tag" data-ko="칼리파 시티" data-en="Khalifa City" data-zh="哈利法城"></span>
+                </div>
+                <h3>Khalifa Park Tennis Courts</h3>
+                <p class="description" data-ko="칼리파 파크 내 공공 테니스 코트. 합리적인 가격으로 이용 가능한 시설. 칼리파 시티 거주 한인 가족들이 많이 이용합니다. 사전 예약 필요." data-en="Public tennis courts in Khalifa Park. Affordable rates. Popular with Korean families living in Khalifa City. Advance booking required." data-zh="哈利法公园内的公共网球场。价格合理。深受居住在哈利法城的韩国家庭欢迎。需提前预约。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Khalifa Park, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 665 9555
+                    </div>
+                </div>
+                <a href="#" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">05</span>
+                    <span class="tag" data-ko="리조트" data-en="Resort" data-zh="度假村"></span>
+                </div>
+                <h3>Saadiyat Beach Golf Club Tennis</h3>
+                <p class="description" data-ko="사디얏 아일랜드의 프리미엄 골프&테니스 클럽. 플러드라이트 하드코트 4면 보유. 전문 코치 프로그램, 주니어 아카데미 운영. 비치 리조트 분위기에서 테니스를 즐길 수 있습니다." data-en="Premium golf & tennis club on Saadiyat Island. 4 floodlit hard courts. Professional coaching programs and junior academy. Enjoy tennis in a beach resort atmosphere." data-zh="萨迪亚特岛的高端高尔夫网球俱乐部。4个泛光灯硬地球场。专业教练课程和青少年学院。在海滨度假氛围中享受网球。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Saadiyat Island, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 557 8000
+                    </div>
+                </div>
+                <a href="https://www.sbgc.ae/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">06</span>
+                    <span class="tag" data-ko="실내코트" data-en="Indoor" data-zh="室内"></span>
+                </div>
+                <h3>Al Forsan International Sports Resort</h3>
+                <p class="description" data-ko="칼리파 시티 인근 국제 스포츠 리조트. 실내외 테니스코트 모두 보유. 여름 고온 시기에도 쾌적하게 이용 가능. 승마, 사격 등 다양한 스포츠도 즐길 수 있습니다." data-en="International sports resort near Khalifa City. Both indoor and outdoor tennis courts. Comfortable play even in peak summer heat. Also offers horse riding, shooting, and more." data-zh="哈利法城附近的国际体育度假村。室内外网球场兼备。即使在夏季高温时期也能舒适打球。还提供马术、射击等多种运动。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Khalifa City, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 556 8555
+                    </div>
+                </div>
+                <a href="https://www.alforsan.com/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+        </div>
+
+        <div class="tips-box">
+            <h3 data-ko="테니스 팁" data-en="Tennis Tips" data-zh="网球贴士"></h3>
+            <ul>
+                <li data-ko="&lt;strong&gt;여름(6~9월)&lt;/strong&gt;은 기온이 45°C 이상이므로, 실내코트나 저녁 시간대(야간 조명 코트)를 추천합니다" data-en="&lt;strong&gt;Summer (Jun-Sep)&lt;/strong&gt; temperatures exceed 45°C. Indoor courts or evening sessions with floodlights are recommended" data-zh="&lt;strong&gt;夏季（6-9月）&lt;/strong&gt;气温超过45°C，建议选择室内球场或傍晚灯光球场"></li>
+                <li data-ko="대부분의 테니스 시설은 &lt;strong&gt;사전 예약제&lt;/strong&gt;로 운영되며, 앱이나 전화로 예약합니다" data-en="Most tennis facilities operate on a &lt;strong&gt;reservation basis&lt;/strong&gt; — book via app or phone" data-zh="大多数网球设施采用&lt;strong&gt;预约制&lt;/strong&gt;，可通过应用或电话预约"></li>
+                <li data-ko="&lt;strong&gt;주니어 프로그램&lt;/strong&gt;은 만 4세부터 참여 가능하며, Zayed Sports City와 Abu Dhabi Country Club이 인기입니다" data-en="&lt;strong&gt;Junior programs&lt;/strong&gt; start from age 4. Zayed Sports City and Abu Dhabi Country Club are most popular" data-zh="&lt;strong&gt;青少年项目&lt;/strong&gt;从4岁开始，Zayed Sports City和Abu Dhabi Country Club最受欢迎"></li>
+                <li data-ko="코트 이용료는 시간당 약 &lt;strong&gt;50~150 AED&lt;/strong&gt;이며, 멤버십 가입 시 할인 혜택이 있습니다" data-en="Court fees are approximately &lt;strong&gt;50-150 AED/hour&lt;/strong&gt;, with discounts for membership holders" data-zh="球场费用约&lt;strong&gt;50-150迪拉姆/小时&lt;/strong&gt;，会员可享折扣"></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p data-ko="아부다비 온보딩 가이드 &copy; 2026 &mdash; 정보는 참고용이며, 최신 정보는 각 시설 웹사이트에서 확인하세요." data-en="Abu Dhabi Onboarding Guide &copy; 2026 &mdash; Information is for reference only. Please verify details on each facility's website." data-zh="阿布扎比安居指南 &copy; 2026 &mdash; 信息仅供参考，请在各设施网站上核实最新详情。"></p>
+    </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('abLang') || 'ko';
+        function setLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('abLang', lang);
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) el.innerHTML = text;
+            });
+        }
+        setLang(currentLang);
+    </script>
+    <script src="animations.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="map.js"></script>
+
+</body>
+</html>

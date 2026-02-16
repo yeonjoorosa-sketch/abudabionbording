@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>골프장 - Abu Dhabi Onboarding Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400;500;600;700&family=Noto+Serif+SC:wght@200;300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <div class="hero" style="min-height:320px; padding:80px 40px 60px;">
+        <div class="hero-particles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLang('ko')">KO</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('zh')">CN</button>
+        </div>
+        <p class="hero-eyebrow" data-ko="아부다비 온보딩 가이드" data-en="Abu Dhabi Onboarding Guide" data-zh="阿布扎比安居指南"></p>
+        <h1 style="font-size:3rem;" data-ko="골프장" data-en="Golf Courses" data-zh="高尔夫球场"></h1>
+        <p class="hero-subtitle" data-ko="아부다비의 세계적인 골프 코스 &amp; 컨트리클럽" data-en="World-class golf courses &amp; country clubs in Abu Dhabi" data-zh="阿布扎比的世界级高尔夫球场和乡村俱乐部"></p>
+        <div class="hero-divider"></div>
+    </div>
+
+    <div class="back-bar">
+        <a href="index.html" class="back-btn" data-ko="메인으로" data-en="Back to Main" data-zh="返回主页"></a>
+    </div>
+
+    <div class="view-tabs">
+        <button class="view-tab active" data-view="list">
+            <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+            <span data-ko="목록" data-en="List" data-zh="列表"></span>
+        </button>
+        <button class="view-tab" data-view="map">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span data-ko="지도" data-en="Map" data-zh="地图"></span>
+        </button>
+    </div>
+
+    <div class="map-view">
+        <div id="mapContainer" class="map-container"></div>
+    </div>
+
+    <div class="section">
+        <div class="cards-grid">
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">01</span>
+                    <span class="tag" data-ko="챔피언십" data-en="Championship" data-zh="锦标赛"></span>
+                </div>
+                <h3>Yas Links Abu Dhabi</h3>
+                <p class="description" data-ko="야스 아일랜드에 위치한 카일 필립스 설계의 챔피언십 링크스 코스. 18홀, 파 72. HSBC Abu Dhabi Golf Championship 개최지. 아라비아만의 멋진 해안 경관 속에서 라운딩 가능." data-en="Championship links course designed by Kyle Phillips on Yas Island. 18 holes, par 72. Host of the HSBC Abu Dhabi Golf Championship. Stunning Arabian Gulf coastal views." data-zh="位于亚斯岛的Kyle Phillips设计锦标赛林克斯球场。18洞，标准杆72。HSBC阿布扎比高尔夫锦标赛举办地。阿拉伯湾壮丽海岸风景。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Yas Island, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 810 7710
+                    </div>
+                </div>
+                <a href="https://www.yaslinks.com/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">02</span>
+                    <span class="tag" data-ko="명문 코스" data-en="Prestigious" data-zh="名门球场"></span>
+                </div>
+                <h3>Abu Dhabi Golf Club</h3>
+                <p class="description" data-ko="1998년 개장, 피터 하라딘 설계의 27홀 챔피언십 코스. 상징적인 매 모양의 클럽하우스가 랜드마크. 아부다비에서 가장 역사 있는 골프클럽 중 하나." data-en="Opened in 1998, 27-hole championship course designed by Peter Harradine. Iconic falcon-shaped clubhouse is a landmark. One of Abu Dhabi's most historic golf clubs." data-zh="1998年开业，Peter Harradine设计的27洞锦标赛球场。标志性的猎鹰造型会所是地标。阿布扎比最具历史的高尔夫俱乐部之一。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Sas Al Nakhl, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 885 8888
+                    </div>
+                </div>
+                <a href="https://www.adgolfclub.ae/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">03</span>
+                    <span class="tag" data-ko="사디얏 아일랜드" data-en="Saadiyat Island" data-zh="萨迪亚特岛"></span>
+                </div>
+                <h3>Saadiyat Beach Golf Club</h3>
+                <p class="description" data-ko="게리 플레이어 설계의 18홀 챔피언십 코스. 사디얏 아일랜드 해변을 따라 펼쳐진 절경의 코스. 친환경 골프장으로 야생 거북이와 돌고래를 볼 수 있는 것이 특징." data-en="18-hole championship course designed by Gary Player along Saadiyat Beach. Known for eco-friendly approach — sea turtles and dolphins are common sightings on the course." data-zh="Gary Player设计的18洞锦标赛球场，沿萨迪亚特海滩延伸。以环保著称，可在球场上看到海龟和海豚。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Saadiyat Island, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 557 8000
+                    </div>
+                </div>
+                <a href="https://www.sbgc.ae/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">04</span>
+                    <span class="tag" data-ko="공항 인근" data-en="Near Airport" data-zh="机场附近"></span>
+                </div>
+                <h3>Al Ghazal Golf Club</h3>
+                <p class="description" data-ko="아부다비 국제공항 인근의 샌드 코스. 18홀 파 72. 합리적인 그린피로 초보자부터 중급자에게 인기. 야간 조명 가능한 9홀도 보유. 넓은 연습장(드라이빙 레인지) 운영." data-en="Sand course near Abu Dhabi International Airport. 18 holes, par 72. Popular with beginners and intermediate players for affordable green fees. 9-hole floodlit course available." data-zh="阿布扎比国际机场附近的沙地球场。18洞，标准杆72。以合理的果岭费受到初学者和中级球手欢迎。可夜间照明的9洞球场。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Near Abu Dhabi Airport, Umm Al Nar
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 575 8040
+                    </div>
+                </div>
+                <a href="https://www.alghazalgolf.ae/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">05</span>
+                    <span class="tag" data-ko="실내 골프" data-en="Indoor Golf" data-zh="室内高尔夫"></span>
+                </div>
+                <h3>Topgolf Abu Dhabi</h3>
+                <p class="description" data-ko="야스 아일랜드에 위치한 글로벌 엔터테인먼트 골프 시설. 3층 규모의 타석에서 마이크로칩 내장 볼로 게임 가능. 식음료 서비스와 함께 가족 단위로 즐기기 좋습니다." data-en="Global entertainment golf facility on Yas Island. 3-story hitting bays with microchipped balls. Great for families with food & beverage service alongside gaming." data-zh="位于亚斯岛的全球娱乐高尔夫设施。3层打位配备芯片球。提供餐饮服务，适合家庭娱乐。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Yas Island, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 496 4653
+                    </div>
+                </div>
+                <a href="https://topgolf.com/ae/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-number">06</span>
+                    <span class="tag" data-ko="리조트" data-en="Resort" data-zh="度假村"></span>
+                </div>
+                <h3>Abu Dhabi City Golf Club</h3>
+                <p class="description" data-ko="도심 한복판에 위치한 9홀 파 36 코스. 짧은 라운딩이 가능해 바쁜 직장인에게 인기. 드라이빙 레인지와 퍼팅 그린 보유. 퇴근 후 골프 연습하기 좋습니다." data-en="9-hole par 36 course in the city center. Perfect for busy professionals who want a quick round. Driving range and putting green available. Great for after-work practice." data-zh="位于市中心的9洞标准杆36球场。适合想快速打一轮的忙碌上班族。配备练习场和推杆果岭。下班后练球的好去处。"></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Mushrif Area, Abu Dhabi
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +971 2 445 9600
+                    </div>
+                </div>
+                <a href="https://www.adcitygolf.ae/" target="_blank" class="visit-btn" data-ko="웹사이트 방문" data-en="Visit Website" data-zh="访问网站"></a>
+            </div>
+
+        </div>
+
+        <div class="tips-box">
+            <h3 data-ko="골프 가이드" data-en="Golf Guide" data-zh="高尔夫指南"></h3>
+            <ul>
+                <li data-ko="&lt;strong&gt;그린피&lt;/strong&gt;는 시즌에 따라 다르며, 여름(6~9월)에는 최대 50% 할인됩니다. 겨울 성수기(10~4월)에는 조기 예약이 필수입니다" data-en="&lt;strong&gt;Green fees&lt;/strong&gt; vary by season — up to 50% off in summer (Jun-Sep). Early booking is essential during peak winter season (Oct-Apr)" data-zh="&lt;strong&gt;果岭费&lt;/strong&gt;因季节而异，夏季（6-9月）最高打5折。冬季旺季（10-4月）需提前预订"></li>
+                <li data-ko="&lt;strong&gt;Yas Links&lt;/strong&gt;와 &lt;strong&gt;Saadiyat Beach GC&lt;/strong&gt;는 UAE 내 최고급 코스로, 해외 골퍼들에게도 인기 있는 버킷리스트 코스입니다" data-en="&lt;strong&gt;Yas Links&lt;/strong&gt; and &lt;strong&gt;Saadiyat Beach GC&lt;/strong&gt; are top-tier courses, bucket-list destinations for international golfers" data-zh="&lt;strong&gt;Yas Links&lt;/strong&gt;和&lt;strong&gt;Saadiyat Beach GC&lt;/strong&gt;是顶级球场，是国际高尔夫球手的必打球场"></li>
+                <li data-ko="초보자는 &lt;strong&gt;Al Ghazal Golf Club&lt;/strong&gt;에서 합리적인 가격으로 시작하고, &lt;strong&gt;Topgolf&lt;/strong&gt;에서 가볍게 연습하는 것을 추천합니다" data-en="Beginners can start at &lt;strong&gt;Al Ghazal Golf Club&lt;/strong&gt; for affordable rates, and practice casually at &lt;strong&gt;Topgolf&lt;/strong&gt;" data-zh="初学者建议从价格合理的&lt;strong&gt;Al Ghazal Golf Club&lt;/strong&gt;开始，在&lt;strong&gt;Topgolf&lt;/strong&gt;轻松练习"></li>
+                <li data-ko="대부분의 골프장에서 &lt;strong&gt;골프카트, 클럽 렌탈, 레슨&lt;/strong&gt; 서비스를 제공합니다. 멤버십 가입 시 큰 할인 혜택이 있습니다" data-en="Most courses offer &lt;strong&gt;golf cart, club rental, and lesson&lt;/strong&gt; services. Membership provides significant discounts" data-zh="大多数球场提供&lt;strong&gt;高尔夫球车、球杆租赁和课程&lt;/strong&gt;服务。会员可享大幅折扣"></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p data-ko="아부다비 온보딩 가이드 &copy; 2026 &mdash; 정보는 참고용이며, 최신 정보는 각 골프장 웹사이트에서 확인하세요." data-en="Abu Dhabi Onboarding Guide &copy; 2026 &mdash; Information is for reference only. Please verify details on each golf course's website." data-zh="阿布扎比安居指南 &copy; 2026 &mdash; 信息仅供参考，请在各高尔夫球场网站上核实最新详情。"></p>
+    </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('abLang') || 'ko';
+        function setLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('abLang', lang);
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) el.innerHTML = text;
+            });
+        }
+        setLang(currentLang);
+    </script>
+    <script src="animations.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="map.js"></script>
+
+</body>
+</html>

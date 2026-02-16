@@ -60,6 +60,22 @@
             { name: '1004 Gourmet', lat: 24.4960, lng: 54.4100, desc: { ko: 'Shams Boutik, Al Reem Island', en: 'Shams Boutik, Al Reem Island', zh: 'Shams Boutik, Al Reem Island' } },
             { name: 'QKO Asian Market', lat: 24.4837, lng: 54.3729, desc: { ko: 'Hamdan St / Dalma Mall / Yas Mall', en: 'Hamdan St / Dalma Mall / Yas Mall', zh: 'Hamdan St / Dalma Mall / Yas Mall' } },
             { name: 'Spinneys', lat: 24.4539, lng: 54.3773, desc: { ko: '아부다비 주요 지점', en: 'Multiple Abu Dhabi locations', zh: '阿布扎比多个分店' } }
+        ],
+        'tennis.html': [
+            { name: 'Zayed Sports City Tennis', lat: 24.4530, lng: 54.3690, desc: { ko: '하드코트 8면, ATP/WTA 대회 개최지', en: '8 hard courts, ATP/WTA event venue', zh: '8个硬地球场，ATP/WTA赛事场地' } },
+            { name: 'Abu Dhabi Country Club', lat: 24.4670, lng: 54.3750, desc: { ko: '플러드라이트 하드코트 4면', en: '4 floodlit hard courts', zh: '4个泛光灯硬地球场' } },
+            { name: 'W Abu Dhabi Tennis (Yas)', lat: 24.4930, lng: 54.6100, desc: { ko: 'ITF 인증 코치, 야스 아일랜드', en: 'ITF-certified coaches, Yas Island', zh: 'ITF认证教练，亚斯岛' } },
+            { name: 'Khalifa Park Tennis', lat: 24.4250, lng: 54.4600, desc: { ko: '공공 테니스 코트, 합리적 가격', en: 'Public courts, affordable rates', zh: '公共球场，价格合理' } },
+            { name: 'Saadiyat Beach Golf Club Tennis', lat: 24.5440, lng: 54.4220, desc: { ko: '사디얏 아일랜드 프리미엄 클럽', en: 'Premium club, Saadiyat Island', zh: '萨迪亚特岛高端俱乐部' } },
+            { name: 'Al Forsan Sports Resort', lat: 24.4100, lng: 54.5700, desc: { ko: '실내외 코트 보유, 칼리파 시티', en: 'Indoor & outdoor courts, Khalifa City', zh: '室内外球场，哈利法城' } }
+        ],
+        'golf.html': [
+            { name: 'Yas Links Abu Dhabi', lat: 24.4890, lng: 54.6050, desc: { ko: '18홀 챔피언십 링크스, 야스 아일랜드', en: '18-hole championship links, Yas Island', zh: '18洞锦标赛林克斯球场，亚斯岛' } },
+            { name: 'Abu Dhabi Golf Club', lat: 24.4440, lng: 54.4410, desc: { ko: '27홀, 매 모양 클럽하우스', en: '27 holes, falcon-shaped clubhouse', zh: '27洞，猎鹰造型会所' } },
+            { name: 'Saadiyat Beach Golf Club', lat: 24.5440, lng: 54.4220, desc: { ko: '게리 플레이어 설계, 사디얏 아일랜드', en: 'Gary Player design, Saadiyat Island', zh: 'Gary Player设计，萨迪亚特岛' } },
+            { name: 'Al Ghazal Golf Club', lat: 24.4310, lng: 54.4440, desc: { ko: '18홀 샌드 코스, 공항 인근', en: '18-hole sand course, near airport', zh: '18洞沙地球场，机场附近' } },
+            { name: 'Topgolf Abu Dhabi', lat: 24.4960, lng: 54.6080, desc: { ko: '엔터테인먼트 골프, 야스 아일랜드', en: 'Entertainment golf, Yas Island', zh: '娱乐高尔夫，亚斯岛' } },
+            { name: 'Abu Dhabi City Golf Club', lat: 24.4680, lng: 54.3730, desc: { ko: '9홀 파 36, 도심 위치', en: '9-hole par 36, city center', zh: '9洞标准杆36，市中心' } }
         ]
     };
 
