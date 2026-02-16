@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400;500;600;700&family=Noto+Serif+SC:wght@200;300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
 
@@ -26,6 +27,21 @@
 
     <div class="back-bar">
         <a href="index.html" class="back-btn" data-ko="메인으로" data-en="Back to Main" data-zh="返回主页"></a>
+    </div>
+
+    <div class="view-tabs">
+        <button class="view-tab active" data-view="list">
+            <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+            <span data-ko="목록" data-en="List" data-zh="列表"></span>
+        </button>
+        <button class="view-tab" data-view="map">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span data-ko="지도" data-en="Map" data-zh="地图"></span>
+        </button>
+    </div>
+
+    <div class="map-view">
+        <div id="mapContainer" class="map-container"></div>
     </div>
 
     <div class="section">
@@ -159,6 +175,8 @@
         setLang(currentLang);
     </script>
     <script src="animations.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="map.js"></script>
 
 </body>
 </html>
