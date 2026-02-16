@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abu Dhabi Onboarding Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400;500;600;700&family=Noto+Serif+SC:wght@200;300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-particles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLang('ko')">KO</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('zh')">CN</button>
+        </div>
+        <p class="hero-eyebrow" data-ko="정착을 위한 가이드" data-en="Your Guide to Settling In" data-zh="安居指南"></p>
+        <h1>Welcome to<br><em>Abu Dhabi</em></h1>
+        <p class="hero-subtitle" data-ko="부동산, 베이비시터, 가사 도우미, 한식당, 한국 마트 &mdash; 아부다비 새 생활에 필요한 모든 정보를 한눈에" data-en="Real estate, childcare, housekeeping, Korean dining &amp; groceries &mdash; everything for your seamless start" data-zh="房产、保姆、家政、韩餐厅、韩国超市 &mdash; 为您在阿布扎比的新生活精心整理的全部信息"></p>
+        <div class="hero-divider"></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <a href="realestate.html" class="menu-card">
+            <span class="menu-number">01</span>
+            <span class="menu-icon">🏠</span>
+            <h2 data-ko="부동산 에이전시" data-en="Real Estate" data-zh="房产中介"></h2>
+            <p data-ko="아부다비에서 집을 구할 때 도움을 받을 수 있는 에이전시 모음" data-en="Trusted agencies to help you find your perfect home in Abu Dhabi" data-zh="帮助您在阿布扎比找到理想住所的可靠中介"></p>
+            <span class="menu-count" data-ko="8개 에이전시" data-en="8 Agencies" data-zh="8家中介"></span>
+        </a>
+
+        <a href="babysitter.html" class="menu-card">
+            <span class="menu-number">02</span>
+            <span class="menu-icon">👶</span>
+            <h2 data-ko="베이비시터 에이전시" data-en="Babysitters" data-zh="保姆中介"></h2>
+            <p data-ko="믿을 수 있는 육아 도우미를 찾을 수 있는 에이전시" data-en="Professional childcare agencies for your little ones" data-zh="为您的孩子提供可靠的育儿专业人员"></p>
+            <span class="menu-count" data-ko="7개 에이전시" data-en="7 Agencies" data-zh="7家中介"></span>
+        </a>
+
+        <a href="maid.html" class="menu-card">
+            <span class="menu-number">03</span>
+            <span class="menu-icon">🧹</span>
+            <h2 data-ko="가사 도우미 에이전시" data-en="Housekeeping" data-zh="家政服务"></h2>
+            <p data-ko="가사 도우미를 구할 수 있는 에이전시" data-en="Reliable domestic help to keep your home running smoothly" data-zh="为您的家庭提供可靠的家政服务"></p>
+            <span class="menu-count" data-ko="7개 에이전시" data-en="7 Agencies" data-zh="7家中介"></span>
+        </a>
+
+        <a href="korean.html" class="menu-card">
+            <span class="menu-number">04</span>
+            <span class="menu-icon">🍖</span>
+            <h2 data-ko="한식 레스토랑" data-en="Korean Restaurants" data-zh="韩国餐厅"></h2>
+            <p data-ko="한국 음식이 그리울 때 찾아갈 수 있는 한식당" data-en="Satisfy your cravings for Korean cuisine in Abu Dhabi" data-zh="在阿布扎比想念韩国料理时可以去的韩餐厅"></p>
+            <span class="menu-count" data-ko="7개 레스토랑" data-en="7 Restaurants" data-zh="7家餐厅"></span>
+        </a>
+
+        <a href="grocery.html" class="menu-card">
+            <span class="menu-number">05</span>
+            <span class="menu-icon">🛒</span>
+            <h2 data-ko="한국 마트 &amp; 반찬가게" data-en="Korean Grocery" data-zh="韩国超市"></h2>
+            <p data-ko="김치, 반찬, 한국 식재료를 구할 수 있는 마트" data-en="Where to find kimchi, banchan, and Korean ingredients" data-zh="在阿布扎比哪里可以买到泡菜、小菜和韩国食材"></p>
+            <span class="menu-count" data-ko="5개 매장" data-en="5 Stores" data-zh="5家商店"></span>
+        </a>
+
+        <a href="school.html" class="menu-card">
+            <span class="menu-number">06</span>
+            <span class="menu-icon">🎓</span>
+            <h2 data-ko="외국인 학교" data-en="International Schools" data-zh="国际学校"></h2>
+            <p data-ko="IB, 영국식, 미국식 커리큘럼의 우수한 국제학교" data-en="Top-rated IB, British, and American curriculum schools" data-zh="优质IB、英式和美式课程国际学校"></p>
+            <span class="menu-count" data-ko="8개 학교" data-en="8 Schools" data-zh="8所学校"></span>
+        </a>
+
+    </div>
+
+    <footer>
+        <p data-ko="아부다비 온보딩 가이드 &copy; 2026 &mdash; 정보는 참고용이며, 최신 정보는 각 에이전시 웹사이트에서 확인하세요." data-en="Abu Dhabi Onboarding Guide &copy; 2026 &mdash; Information is for reference only. Please verify details on each agency's website." data-zh="阿布扎比安居指南 &copy; 2026 &mdash; 信息仅供参考，请在各中介网站上核实最新详情。"></p>
+    </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('abLang') || 'ko';
+
+        function setLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('abLang', lang);
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) el.innerHTML = text;
+            });
+        }
+
+        setLang(currentLang);
+    </script>
+    <script src="animations.js"></script>
+
+</body>
+</html>
