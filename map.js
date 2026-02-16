@@ -5,7 +5,19 @@
 (function () {
     'use strict';
 
-    // Location data per page (keyed by page filename)
+    // Category colors & labels
+    const categories = {
+        'realestate.html': { color: '#4A90D9', emoji: '🏠', label: { ko: '부동산', en: 'Real Estate', zh: '房产' } },
+        'babysitter.html': { color: '#E87CA0', emoji: '👶', label: { ko: '베이비시터', en: 'Babysitters', zh: '保姆' } },
+        'maid.html':       { color: '#9B7ED8', emoji: '🧹', label: { ko: '가사도우미', en: 'Housekeeping', zh: '家政' } },
+        'school.html':     { color: '#F5A623', emoji: '🎓', label: { ko: '학교', en: 'Schools', zh: '学校' } },
+        'golf.html':       { color: '#2EAD6D', emoji: '⛳', label: { ko: '골프장', en: 'Golf', zh: '高尔夫' } },
+        'tennis.html':     { color: '#E05D44', emoji: '🎾', label: { ko: '테니스장', en: 'Tennis', zh: '网球' } },
+        'grocery.html':    { color: '#3CBBB1', emoji: '🛒', label: { ko: '마트', en: 'Grocery', zh: '超市' } },
+        'korean.html':     { color: '#D4553A', emoji: '🍖', label: { ko: '한식당', en: 'Restaurants', zh: '餐厅' } }
+    };
+
+    // Location data per page
     const locations = {
         'realestate.html': [
             { name: 'Aldar Properties', lat: 24.4539, lng: 54.3773, desc: { ko: '아부다비 최대 부동산 개발사', en: 'Abu Dhabi\'s largest developer', zh: '阿布扎比最大开发商' } },
@@ -79,36 +91,64 @@
         ]
     };
 
+    // Create colored SVG marker
+    function createMarkerIcon(color) {
+        return L.divIcon({
+            className: 'custom-marker',
+            html: '<svg width="28" height="38" viewBox="0 0 28 38" xmlns="http://www.w3.org/2000/svg">' +
+                  '<path d="M14 0C6.27 0 0 6.27 0 14c0 10.5 14 24 14 24s14-13.5 14-24C28 6.27 21.73 0 14 0zm0 19c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" fill="' + color + '"/>' +
+                  '<circle cx="14" cy="14" r="4" fill="#fff"/></svg>',
+            iconSize: [28, 38],
+            iconAnchor: [14, 38],
+            popupAnchor: [0, -38]
+        });
+    }
+
     // Detect current page
     const pageName = window.location.pathname.split('/').pop() || 'index.html';
+    const isIndex = (pageName === '' || pageName === 'index.html');
     const pageLocations = locations[pageName];
 
-    if (!pageLocations) return; // No map for this page
+    // If not index and no locations for this page, skip
+    if (!isIndex && !pageLocations) return;
 
     // Tab switching logic
     const listTab = document.querySelector('.view-tab[data-view="list"]');
     const mapTab = document.querySelector('.view-tab[data-view="map"]');
-    const sectionEl = document.querySelector('.section');
     const mapView = document.querySelector('.map-view');
 
-    if (!listTab || !mapTab || !sectionEl || !mapView) return;
+    // For detail pages, list content is .section; for index, it's .menu-grid
+    const listContent = isIndex
+        ? document.querySelector('.menu-grid')
+        : document.querySelector('.section');
+
+    if (!listTab || !mapTab || !listContent || !mapView) return;
 
     let mapInitialized = false;
     let map = null;
+    let allMarkers = []; // For combined map language updates
 
     function switchView(view) {
         if (view === 'list') {
             listTab.classList.add('active');
             mapTab.classList.remove('active');
-            sectionEl.classList.add('active');
+            if (isIndex) {
+                listContent.style.display = '';
+            } else {
+                listContent.classList.add('active');
+            }
             mapView.classList.remove('active');
         } else {
             mapTab.classList.add('active');
             listTab.classList.remove('active');
             mapView.classList.add('active');
-            sectionEl.classList.remove('active');
+            if (isIndex) {
+                listContent.style.display = 'none';
+            } else {
+                listContent.classList.remove('active');
+            }
             if (!mapInitialized) {
-                initMap();
+                isIndex ? initCombinedMap() : initMap();
                 mapInitialized = true;
             } else {
                 map.invalidateSize();
@@ -120,46 +160,105 @@
     mapTab.addEventListener('click', () => switchView('map'));
 
     // Default to list view
-    sectionEl.classList.add('active');
+    if (!isIndex) {
+        listContent.classList.add('active');
+    }
 
+    // ── Single-category map (detail pages) ──
     function initMap() {
         const lang = localStorage.getItem('abLang') || 'ko';
+        const cat = categories[pageName];
+        const color = cat ? cat.color : '#b8962e';
+        const icon = createMarkerIcon(color);
 
-        map = L.map('mapContainer', {
-            scrollWheelZoom: true,
-            zoomControl: true
-        });
+        map = L.map('mapContainer', { scrollWheelZoom: true, zoomControl: true });
 
-        // OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors',
             maxZoom: 18
         }).addTo(map);
 
-        // Custom gold marker icon
-        const goldIcon = L.divIcon({
-            className: 'custom-marker',
-            html: '<svg width="28" height="38" viewBox="0 0 28 38" xmlns="http://www.w3.org/2000/svg"><path d="M14 0C6.27 0 0 6.27 0 14c0 10.5 14 24 14 24s14-13.5 14-24C28 6.27 21.73 0 14 0zm0 19c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" fill="#b8962e"/><circle cx="14" cy="14" r="4" fill="#fff"/></svg>',
-            iconSize: [28, 38],
-            iconAnchor: [14, 38],
-            popupAnchor: [0, -38]
-        });
-
         const bounds = L.latLngBounds();
 
-        pageLocations.forEach((loc, i) => {
-            const marker = L.marker([loc.lat, loc.lng], { icon: goldIcon }).addTo(map);
+        pageLocations.forEach(loc => {
+            const marker = L.marker([loc.lat, loc.lng], { icon: icon }).addTo(map);
             const desc = loc.desc[lang] || loc.desc.en;
-
             marker.bindPopup(
                 '<div class="map-popup-title">' + loc.name + '</div>' +
                 '<div class="map-popup-desc">' + desc + '</div>'
             );
-
             bounds.extend([loc.lat, loc.lng]);
+            allMarkers.push({ marker: marker, loc: loc, category: pageName });
         });
 
         map.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 });
+    }
+
+    // ── Combined map (index page) ──
+    function initCombinedMap() {
+        const lang = localStorage.getItem('abLang') || 'ko';
+
+        map = L.map('mapContainer', { scrollWheelZoom: true, zoomControl: true });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+            maxZoom: 18
+        }).addTo(map);
+
+        const bounds = L.latLngBounds();
+        const layerGroups = {};
+
+        // Create legend
+        const legendEl = document.getElementById('mapLegend');
+
+        Object.keys(categories).forEach(catKey => {
+            const cat = categories[catKey];
+            const locs = locations[catKey];
+            if (!locs) return;
+
+            const icon = createMarkerIcon(cat.color);
+            const group = L.layerGroup();
+            layerGroups[catKey] = group;
+
+            locs.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: icon });
+                const desc = loc.desc[lang] || loc.desc.en;
+                const catLabel = cat.label[lang] || cat.label.en;
+                marker.bindPopup(
+                    '<div class="map-popup-category" style="color:' + cat.color + '">' + cat.emoji + ' ' + catLabel + '</div>' +
+                    '<div class="map-popup-title">' + loc.name + '</div>' +
+                    '<div class="map-popup-desc">' + desc + '</div>'
+                );
+                marker.addTo(group);
+                bounds.extend([loc.lat, loc.lng]);
+                allMarkers.push({ marker: marker, loc: loc, category: catKey });
+            });
+
+            group.addTo(map);
+
+            // Legend item
+            if (legendEl) {
+                const item = document.createElement('button');
+                item.className = 'legend-item active';
+                item.dataset.category = catKey;
+                item.innerHTML = '<span class="legend-dot" style="background:' + cat.color + '"></span>' +
+                                 '<span class="legend-emoji">' + cat.emoji + '</span>' +
+                                 '<span class="legend-label" data-ko="' + cat.label.ko + '" data-en="' + cat.label.en + '" data-zh="' + cat.label.zh + '">' + (cat.label[lang] || cat.label.en) + '</span>';
+                item.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                    if (this.classList.contains('active')) {
+                        group.addTo(map);
+                    } else {
+                        map.removeLayer(group);
+                    }
+                });
+                legendEl.appendChild(item);
+            }
+        });
+
+        if (bounds.isValid()) {
+            map.fitBounds(bounds, { padding: [40, 40], maxZoom: 12 });
+        }
     }
 
     // Re-render popups on language change
@@ -168,20 +267,29 @@
         window.setLang = function (lang) {
             origSetLang(lang);
             if (map && mapInitialized) {
-                map.eachLayer(layer => {
-                    if (layer instanceof L.Marker) {
-                        const latlng = layer.getLatLng();
-                        const loc = pageLocations.find(l =>
-                            Math.abs(l.lat - latlng.lat) < 0.001 && Math.abs(l.lng - latlng.lng) < 0.001
+                allMarkers.forEach(item => {
+                    const loc = item.loc;
+                    const desc = loc.desc[lang] || loc.desc.en;
+                    const cat = categories[item.category];
+                    if (isIndex && cat) {
+                        const catLabel = cat.label[lang] || cat.label.en;
+                        item.marker.setPopupContent(
+                            '<div class="map-popup-category" style="color:' + cat.color + '">' + cat.emoji + ' ' + catLabel + '</div>' +
+                            '<div class="map-popup-title">' + loc.name + '</div>' +
+                            '<div class="map-popup-desc">' + desc + '</div>'
                         );
-                        if (loc) {
-                            const desc = loc.desc[lang] || loc.desc.en;
-                            layer.setPopupContent(
-                                '<div class="map-popup-title">' + loc.name + '</div>' +
-                                '<div class="map-popup-desc">' + desc + '</div>'
-                            );
-                        }
+                    } else {
+                        item.marker.setPopupContent(
+                            '<div class="map-popup-title">' + loc.name + '</div>' +
+                            '<div class="map-popup-desc">' + desc + '</div>'
+                        );
                     }
+                });
+
+                // Update legend labels
+                document.querySelectorAll('.legend-label').forEach(el => {
+                    const text = el.getAttribute('data-' + lang);
+                    if (text) el.textContent = text;
                 });
             }
         };
